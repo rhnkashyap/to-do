@@ -81,7 +81,7 @@ User.findOne({name:name})
 });
 
 app.post('/list-task', function(req, res){
-    const name = req.body.name;
+    const name = req.body.name;;
 
     Task.find({name:name})
     .then(tasks => {
