@@ -21,6 +21,13 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//For enabling CORS
+app.use(function(req, res, next){
+res.header("Access-Control-Allow-Origin", "*");
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-Width, Content-Type, Accept");
+next();
+});
+
 app.post('/create-user', function(req, res){
 
     const name = req.body.name;
